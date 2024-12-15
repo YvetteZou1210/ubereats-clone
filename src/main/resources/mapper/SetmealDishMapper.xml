@@ -3,7 +3,7 @@
 <mapper namespace="com.cc.mapper.SetmealDishMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.cc.pojo.SetmealDish">
+    <resultMap id="BaseResultMap" type="com.takeout.pojo.SetmealDish">
         <id column="id" property="id" />
         <result column="setmeal_id" property="setmealId" />
         <result column="dish_id" property="dishId" />

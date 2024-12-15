@@ -3,7 +3,7 @@
 <mapper namespace="com.cc.mapper.OrderDetailMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.cc.pojo.OrderDetail">
+    <resultMap id="BaseResultMap" type="com.takeout.pojo.OrderDetail">
         <id column="id" property="id" />
         <result column="name" property="name" />
         <result column="image" property="image" />

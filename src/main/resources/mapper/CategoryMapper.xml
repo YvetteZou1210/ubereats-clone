@@ -3,7 +3,7 @@
 <mapper namespace="com.cc.mapper.CategoryMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.cc.pojo.Category">
+    <resultMap id="BaseResultMap" type="com.takeout.pojo.Category">
         <id column="id" property="id" />
         <result column="type" property="type" />
         <result column="name" property="name" />

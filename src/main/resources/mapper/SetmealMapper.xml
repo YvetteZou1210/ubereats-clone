@@ -3,7 +3,7 @@
 <mapper namespace="com.cc.mapper.SetmealMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.cc.pojo.Setmeal">
+    <resultMap id="BaseResultMap" type="com.takeout.pojo.Setmeal">
         <id column="id" property="id" />
         <result column="category_id" property="categoryId" />
         <result column="name" property="name" />
@@ -25,7 +25,7 @@
     </sql>
 
     <!--套餐分页+模糊查询-->
-    <select id="listSetmeal" resultType="com.cc.dto.SetmealDto">
+    <select id="listSetmeal" resultType="com.takeout.dto.SetmealDto">
         select s.*,c.name as categoryName
         From setmeal s,category c
         Where s.category_id=c.id
@@ -35,7 +35,7 @@
         </if>
         limit #{page} , #{pageSize}
     </select>
-    <select id="getSetmealData" resultType="com.cc.dto.SetmealDto">
+    <select id="getSetmealData" resultType="com.takeout.dto.SetmealDto">
         select s.*, c.name as categoryName
         From setmeal s,
              category c

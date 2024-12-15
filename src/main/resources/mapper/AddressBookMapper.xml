@@ -3,7 +3,7 @@
 <mapper namespace="com.cc.mapper.AddressBookMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.cc.pojo.AddressBook">
+    <resultMap id="BaseResultMap" type="com.takeout.pojo.AddressBook">
         <id column="id" property="id" />
         <result column="user_id" property="userId" />
         <result column="consignee" property="consignee" />

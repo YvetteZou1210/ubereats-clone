@@ -3,7 +3,7 @@
 <mapper namespace="com.cc.mapper.ShoppingCartMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.cc.pojo.ShoppingCart">
+    <resultMap id="BaseResultMap" type="com.takeout.pojo.ShoppingCart">
         <id column="id" property="id" />
         <result column="name" property="name" />
         <result column="image" property="image" />
