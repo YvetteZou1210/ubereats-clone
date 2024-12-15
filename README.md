@@ -6,7 +6,7 @@
 
 ## 📊 功能架构图
 
-![功能架构图](https://i-blog.csdnimg.cn/blog_migrate/1b4bbf55da3948e3ec7ff8028d67a908.png)
+![输入图片说明](https://i-blog.csdnimg.cn/blog_migrate/1b4bbf55da3948e3ec7ff8028d67a908.png)
 
 
 #### 项目详解文档：https://blog.csdn.net/weixin_46906696/article/details/125040457?spm=1001.2014.3001.5502
@@ -16,7 +16,8 @@
 
 ### 📋 表说明
 
-![表说明](https://i-blog.csdnimg.cn/blog_migrate/9dca279fae1ea6eb23e9424c99c71ad2.png)
+![输入图片说明](https://i-blog.csdnimg.cn/blog_migrate/9dca279fae1ea6eb23e9424c99c71ad2.png)
+
 
 ## 🛠️ 开发环境
 
