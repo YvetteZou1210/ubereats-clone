@@ -2,12 +2,13 @@
 
 The UberEats Clone project encompasses a comprehensive set of functionalities designed to support both user and management operations within a food delivery platform. Below are the key functionalities featured in the project:
 
-### Main Skill Stack Summary
+### Main Skill Stack List
 
 - **Frontend Technologies**
   - Vue.js
-  - React
+  - React.js
   - ElementUI
+  - Ant Design 
   - Apache ECharts
   - WeChat Mini Program SDK
 
@@ -27,6 +28,7 @@ The UberEats Clone project encompasses a comprehensive set of functionalities de
 
 - **Database Management**
   - MySQL
+  - MySql Workbench
   - Alibaba Cloud OSS
 
 - **API Documentation and Testing**
