@@ -1,7 +1,3 @@
-Here's a more concise version of your GitHub README:
-
----
-
 ## Project Overview
 
 **RegiTakeout** is a software solution designed for the foodservice industry, consisting of a **System Management Backend** for staff and a **Mobile App** for consumers. 
