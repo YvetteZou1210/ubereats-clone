@@ -1,15 +1,15 @@
 server:
-  port: 9001
+  port: 8080 # 指定app启动时tomcat监听的端口，默认情况下通常监听8080端口
 
 spring:
   application:
-    name: ccTakeOut
+    name: UbereatsClone
   datasource:
-    druid:
+    druid: # Druid
       driver-class-name: com.mysql.cj.jdbc.Driver
       url: jdbc:mysql://localhost:3306/ruiji?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&useSSL=false&allowPublicKeyRetrieval=true
-      username: root
-      password: 333
+      username: springstudent
+      password: springstudent
 #  shardingsphere: # 默认在启动类里排除掉了主从的数据库启动模式，采用单一数据库模式方便开发
 #    datasource:
 #      names:
@@ -40,27 +40,27 @@ spring:
 #    props:
 #      sql:
 #        show: true #开启SQL显示，默认false
-  main:
-    allow-bean-definition-overriding: true
-
-  redis:
-    host: localhost # 本地IP 或是 虚拟机IP
-    port: 6379
-    #    password: root
-    database: 0  # 默认使用 0号db
-  cache:
-    redis:
-      time-to-live: 1800000  # 设置缓存数据的过期时间，30分钟
-
-mybatis-plus:
-  configuration:
-    #在映射实体或者属性时，将数据库中表名和字段名中的下划线去掉，开启按照驼峰命名法映射
-    map-underscore-to-camel-case: true
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-  global-config:
-    db-config:
-      id-type: ASSIGN_ID
-
-#自定义的文件上传存储位置，这里用的相对路径
+#  main:
+#    allow-bean-definition-overriding: true
+#
+#  redis:
+#    host: localhost # 本地IP 或是 虚拟机IP
+#    port: 6379
+#    #    password: root
+#    database: 0  # 默认使用 0号db
+#  cache:
+#    redis:
+#      time-to-live: 1800000  # 设置缓存数据的过期时间，30分钟
+#
+#mybatis-plus:
+#  configuration:
+#    #在映射实体或者属性时，将数据库中表名和字段名中的下划线去掉，开启按照驼峰命名法映射
+#    map-underscore-to-camel-case: true
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#  global-config:
+#    db-config:
+#      id-type: ASSIGN_ID
+#
+##自定义的文件上传存储位置，这里用的相对路径
 takeOutFile:
   fileLocaltion: \src\main\resources\pic\
