@@ -24,7 +24,7 @@ public class LoginCheckFilter implements Filter {
     @Autowired
     private RedisTemplate redisTemplate;
 
-    //调用Spring核心包的字符串匹配类
+    //路径匹配器：调用Spring核心包的字符串匹配类
     public static final AntPathMatcher PATH_MATCHER = new AntPathMatcher();
 
     @Override
@@ -34,10 +34,10 @@ public class LoginCheckFilter implements Filter {
         HttpServletResponse httpServletResponse = (HttpServletResponse) servletResponse;
         //获取url
         String requestUrl = httpServletRequest.getRequestURI();
-        //定义可以放行的请求url
+        //定义可以放行的请求url即不需要处理的请求URL
         String[] urls = {
-            "/employee/login",
-            "/employee/login",
+            "/employee/login",//用户点击登陆按钮
+            "/employee/login",//用户点击登出按钮
             "/backend/**",
             "/front/**",
             "/user/sendMsg",

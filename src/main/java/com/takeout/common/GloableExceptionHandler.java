@@ -13,11 +13,11 @@ import java.sql.SQLIntegrityConstraintViolationException;
  * 全局异常处理
  * 基于代理实现，也就是通过AOP来对这些异常进行拦截
  * 如果抛异常了，就一起来这里进行处理
- * @ControllerAdvice(拦截哪些controller)
+ * @ControllerAdvice(拦截哪些controller) Spring Annotation that allow defining a global exception handler to intercept exceptions thrown by controllers
  * @ControllerAdvice(annotations = {RestController.class, Controller.class})加入了@RestController、@Controller的注解
  * @ResponseBody 返回Result对象时解析成json
  */
-@ControllerAdvice(annotations = {RestController.class, Controller.class})
+@ControllerAdvice(annotations = {RestController.class, Controller.class}) // apply only on annotated controllers
 @ResponseBody
 @Slf4j
 public class GloableExceptionHandler {
@@ -36,7 +36,7 @@ public class GloableExceptionHandler {
             /**
              * splitErrorMessage数组内存的信息
              * Duplicate entry '新增的账号' for key 'idx_username'
-             * 下标位2是新增账号，下标位5是关联的字段名
+             * 下标位2是新增账号比如zhangsan，下标位5是关联的字段名比如idx_username
              */
             String errorMessage = "这个账号重复了" + splitErrorMessage[2];
             return Result.error(errorMessage);

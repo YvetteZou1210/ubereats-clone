@@ -10,6 +10,7 @@ import com.takeout.utils.BaseContext;
 import com.takeout.utils.MD5Util;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.DigestUtils;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
@@ -44,11 +45,15 @@ public class EmployeeController {
         String password=employee.getPassword();
         String username = employee.getUsername();
         log.info("登陆");
-        //MD5加密
+        //MD5加密 customized password encryption
         MD5Util md5Util = new MD5Util();
         password=MD5Util.getMD5(password);
+        // password = DigestUtils.md5DigestAsHex(password.getBytes());
+        // getBytes() transfer string into byte array
+        // e.g., for "myPassword", it might produce: [109, 121, 80, 97, 115, 115, 119, 111, 114, 100]
+
         //通过账户查这个员工对象，这里就不走Service层了
-        LambdaQueryWrapper<Employee> lambdaQueryWrapper = new LambdaQueryWrapper();
+        LambdaQueryWrapper<Employee> lambdaQueryWrapper = new LambdaQueryWrapper<>();
         lambdaQueryWrapper.eq(Employee::getUsername, username);
         Employee empResult=employeeService.getOne(lambdaQueryWrapper);
             //判断用户是否存在
@@ -74,7 +79,7 @@ public class EmployeeController {
 
     /**
      * @param request 删除request作用域中的session对象，就按登陆的request.getSession().setAttribute("employ",empResult.getId());删除employee就行
-     * @return
+     * @return 返回对应用户的结果
      */
     @PostMapping("/logout")
     public Result login(HttpServletRequest request) {
@@ -89,10 +94,14 @@ public class EmployeeController {
     }
 
     /**
+     * 新增员工
      * @param httpServletRequest 获取当前操作人员的session id用
      * @param employee 将员工的数据解析为employee对象
      *                 前端json{name: "", phone: "", sex: "", idNumber: "", username: ""}
      * @return
+     * @Warning 1. Snow Algorithm Implementation for unique id generation
+     *          2. Double same entry is not allowed, need to try....catch for continue workflow
+     *
      */
     @PostMapping("")
     public Result addEmployee(HttpServletRequest httpServletRequest,@RequestBody Employee employee) {

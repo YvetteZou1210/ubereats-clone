@@ -10,7 +10,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-@Slf4j
+@Slf4j // lombok日志注解
 // 排除主从数据库模式，默认用单数据库模式，SpringBootConfiguration.class是主从数据库的配置依赖
 @SpringBootApplication(exclude={DataSourceAutoConfiguration.class, SpringBootConfiguration.class})
 @ServletComponentScan
